@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saurabh Kumar - Software Developer</title>
+    <meta name="description"
+        content="Saurabh Kumar - Software Developer specializing in modern web technologies and Data Structures & Algorithms">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">SK</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Saurabh Kumar</h1>
+                    <div class="subtitle">Software Developer</div>
+                    <p class="tagline">Crafting digital experiences with modern technologies and creative solutions.
+                        Passionate about clean code, user experience, and bringing ideas to life.</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-code"></i>
+                            View My Work
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-image">
+                        <!-- <i class="fas fa-user"></i> -->
+                        <img src="assets/profilePic.png" alt="display pic" width="399px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Me</h2>
+            <div class="about-content">
+                <div class="slide-in-left">
+                    <p class="about-text">
+                        I'm a dedicated Software Developer and Mining Engineering professional with a strong foundation
+                        in problem-solving
+                        and a knack for bringing ideas to life through technology. My journey began at IIT Kharagpur,
+                        where I'm pursuing a dual
+                        degree in Mining Engineering and Safety Engineering, diving deep into computational methods,
+                        robotics, and data
+                        structures.
+                    </p>
+                    <p class="about-text">
+                        I specialize in React, Node.js, and cloud technologies, with a keen eye for design and user
+                        experience. When I'm not coding, you'll find me exploring new technologies, contributing to open
+                        source projects, or mentoring aspiring developers.
+                    </p>
+                    <p class="about-text">
+                        Throughout my academic and project experiences, I've honed my skills in building intuitive user
+                        interfaces, writing
+                        clean and efficient code, and collaborating within dynamic teams. Whether it's a Chrome
+                        Extension to enhance user
+                        experience or a C++ based Library Management System, I enjoy tackling challenges and delivering
+                        solutions that
+                        matter.
+                    </p>
+                    <a href="assets/softCV.pdf" class="btn btn-primary" download>
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </a>
+                </div>
+                <div class="skills-grid slide-in-right">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">C/C++</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">React</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Node.js</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            <!-- <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Analytics Dashboard</h3>
+                        <p class="project-description">Interactive data visualization dashboard with real-time
+                            analytics, custom reports, and responsive design. Features advanced filtering and export
+                            capabilities.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-description">Collaborative task management application with drag-and-drop
+                            functionality, team collaboration features, and cross-platform compatibility.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Redux</span>
+                            <span class="tech-tag">TypeScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Library Management System</h3>
+                        <p class="project-description">
+                            Developed a robust system in C++ with OOPs, dynamic inventory management, custom ID
+                            validation, and automated due-date calculations.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">STL</span>
+                            <span class="tech-tag">OOP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fab fa-chrome"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">YouTube Auto Play/Pause Chrome Extension</h3>
+                        <p class="project-description">
+                            Created an extension to control video playback based on user activity and tab visibility
+                            using Chrome APIs.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Chrome Extensions API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Fire Alarm System</h3>
+                        <p class="project-description">
+                            Built a sensor-based fire alarm system with an Arduino microcontroller and validated it
+                            using Tinkercad and C language.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">Tinkercad</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title fade-in">Experience</h2>
+            <div class="timeline">
+
+                <div class="timeline-item slide-in-left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - 2025</div>
+                        <h3 class="timeline-title">Frontend Developer</h3>
+                        <div class="timeline-company">Digital Agency Inc</div>
+                        <p class="timeline-description">Created responsive, pixel-perfect websites and web applications.
+                            Specialized in modern JavaScript frameworks and collaborated closely with design teams to
+                            deliver exceptional user experiences.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item slide-in-right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Sep'22 - Apr'23</div>
+                        <h3 class="timeline-title">Core Team Member</h3>
+                        <div class="timeline-company">Technology Mining Engineering Society, IIT Kharagpur</div>
+                        <p class="timeline-description">
+                            Organized India’s largest mining technical fest, hosted competitions, and led a team of
+                            20 associates
+                            for seamless event execution.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item slide-in-right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Dec'21 - Apr'23</div>
+                        <h3 class="timeline-title">Volunteer</h3>
+                        <div class="timeline-company">NSS, IIT Kharagpur</div>
+                        <p class="timeline-description">
+                            Conducted AIDS prevention awareness campaigns and managed data for all volunteers during
+                            annual camps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info slide-in-left">
+                    <h3>Let's Work Together</h3>
+                    <p>I'm always interested in new opportunities and exciting projects. Whether you have a question or
+                        just want to say hi, I'll try my best to get back to you!</p>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email</strong><br>
+                            sraj31962@gmail.com
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <strong>Phone</strong><br>
+                            +91 7979761704
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <strong>Location</strong><br>
+                            Nawada, Bihar, India 
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/saurabh-kumar-7692b1223/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Saurabh-110" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/S_raj_2_9" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/s.raj_1_9/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form slide-in-right" id="contactForm">
+                    <div class="form-message" id="formMessage"></div>
+
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required
+                            placeholder="Tell me about your project..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Alex Thompson. All rights reserved. Built with ❤️ and lots of ☕</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="index.js"></script>
+</body>
