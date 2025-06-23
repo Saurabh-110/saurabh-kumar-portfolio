@@ -112,62 +112,6 @@ backToTop.addEventListener("click", () => {
   });
 });
 
-// Contact Form
-const contactForm = document.getElementById("contactForm");
-const formMessage = document.getElementById("formMessage");
-
-contactForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  // Get form data
-  const formData = new FormData(contactForm);
-  const name = formData.get("name");
-  const email = formData.get("email");
-  const subject = formData.get("subject");
-  const message = formData.get("message");
-
-  // Basic validation
-  if (!name || !email || !message) {
-    showFormMessage("Please fill in all required fields.", "error");
-    return;
-  }
-
-  if (!isValidEmail(email)) {
-    showFormMessage("Please enter a valid email address.", "error");
-    return;
-  }
-
-  // Simulate form submission
-  const submitButton = contactForm.querySelector('button[type="submit"]');
-  const originalText = submitButton.innerHTML;
-  submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-  submitButton.disabled = true;
-
-  setTimeout(() => {
-    showFormMessage(
-      "Thank you for your message! I'll get back to you soon.",
-      "success"
-    );
-    contactForm.reset();
-    submitButton.innerHTML = originalText;
-    submitButton.disabled = false;
-  }, 2000);
-});
-
-function showFormMessage(message, type) {
-  formMessage.textContent = message;
-  formMessage.className = `form-message ${type}`;
-  formMessage.style.display = "block";
-
-  setTimeout(() => {
-    formMessage.style.display = "none";
-  }, 5000);
-}
-
-function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}
 
 // Navbar scroll effect
 function updateNavbarTheme() {
@@ -254,3 +198,120 @@ document.querySelectorAll(".project-card").forEach((card) => {
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
 });
+
+// Contact Form
+// const contactForm = document.getElementById("contactForm");
+// const formMessage = document.getElementById("formMessage");
+
+// contactForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+
+//   // Get form data
+//   const formData = new FormData(contactForm);
+//   const name = formData.get("name");
+//   const email = formData.get("email");
+//   const subject = formData.get("subject");
+//   const message = formData.get("message");
+
+//   // Basic validation
+//   if (!name || !email || !message) {
+//     showFormMessage("Please fill in all required fields.", "error");
+//     return;
+//   }
+
+//   if (!isValidEmail(email)) {
+//     showFormMessage("Please enter a valid email address.", "error");
+//     return;
+//   }
+
+//   // Simulate form submission
+//   const submitButton = contactForm.querySelector('button[type="submit"]');
+//   const originalText = submitButton.innerHTML;
+//   submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+//   submitButton.disabled = true;
+
+//   setTimeout(() => {
+//     showFormMessage(
+//       "Thank you for your message! I'll get back to you soon.",
+//       "success"
+//     );
+//     contactForm.reset();
+//     submitButton.innerHTML = originalText;
+//     submitButton.disabled = false;
+//   }, 2000);
+// });
+
+// function showFormMessage(message, type) {
+//   formMessage.textContent = message;
+//   formMessage.className = `form-message ${type}`;
+//   formMessage.style.display = "block";
+
+//   setTimeout(() => {
+//     formMessage.style.display = "none";
+//   }, 5000);
+// }
+
+// function isValidEmail(email) {
+//   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//   return emailRegex.test(email);
+// }
+
+// Contact Form Submission to Google Form
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const subject = document.getElementById("subject").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !message) {
+    showFormMessage("Please fill in all required fields.", "error");
+    return;
+  }
+
+  if (!isValidEmail(email)) {
+    showFormMessage("Please enter a valid email address.", "error");
+    return;
+  }
+
+  // Google Form endpoint
+  const googleFormURL = "https://forms.gle/VJdgjyB5KBTd5p9k6";
+
+  const formData = new FormData();
+  formData.append("entry.192204763", name);     // Name
+  formData.append("entry.2127503447", email);    // Email
+  formData.append("entry.373479535", subject);  // Subject
+  formData.append("entry.2043924074", message);   // Message
+
+  fetch(googleFormURL, {
+    method: "POST",
+    mode: "no-cors", // required for Google Forms
+    body: formData,
+  })
+    .then(() => {
+      showFormMessage("✅ Thank you! Your message has been sent.", "success");
+      contactForm.reset();
+    })
+    .catch(() => {
+      showFormMessage("❌ Oops! Something went wrong. Try again later.", "error");
+    });
+});
+
+function showFormMessage(message, type) {
+  formMessage.textContent = message;
+  formMessage.className = `form-message ${type}`;
+  formMessage.style.display = "block";
+
+  setTimeout(() => {
+    formMessage.style.display = "none";
+  }, 5000);
+}
+
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
