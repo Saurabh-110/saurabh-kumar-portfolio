@@ -1,4 +1,3 @@
-
 :root {
     --primary-color: #6366f1;
     --secondary-color: #8b5cf6;
@@ -36,7 +35,8 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background: var(--bg-color);
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -861,3 +861,50 @@ section {
     transform: translateX(0);
 }
 
+/* Smooth Toggle Switch */
+/* .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    caret-color: transparent;
+    margin-bottom: 50px;
+} */
+
+.theme-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 34px;
+    height: 100%;
+    width: 100%;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px;
+}
+
+.slider .icon {
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.5;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+input:checked+.slider .sun-icon {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+input:not(:checked)+.slider .moon-icon {
+    opacity: 1;
+    transform: scale(1.2);
+}
