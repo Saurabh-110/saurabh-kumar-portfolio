@@ -791,7 +791,7 @@ section {
         grid-template-columns: 1fr;
     }
     .project-card{
-        max-width: 75%;
+        max-width: 95%;
         display: flexbox;
         justify-self: center;
     }
