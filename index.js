@@ -143,34 +143,40 @@ const titles = [
 let currentTitle = 0;
 let currentChar = 0;
 let isDeleting = false;
+let typingDelay = 100;
+let deletingDelay = 40;
+let pauseAfterTyping = 2000;
+let pauseAfterDeleting = 500;
 
 function typeAnimation() {
   const current = titles[currentTitle];
+  const nextChar = isDeleting
+    ? current.substring(0, currentChar - 1)
+    : current.substring(0, currentChar + 1);
 
-  if (isDeleting) {
-    subtitle.textContent = current.substring(0, currentChar - 1);
-    currentChar--;
-  } else {
-    subtitle.textContent = current.substring(0, currentChar + 1);
-    currentChar++;
-  }
+  subtitle.textContent = nextChar;
+  currentChar = isDeleting ? currentChar - 1 : currentChar + 1;
 
-  let typeSpeed = isDeleting ? 50 : 100;
+  let nextDelay = isDeleting ? deletingDelay : typingDelay;
 
   if (!isDeleting && currentChar === current.length) {
-    typeSpeed = 2000; // Pause at end
+    nextDelay = pauseAfterTyping;
     isDeleting = true;
   } else if (isDeleting && currentChar === 0) {
     isDeleting = false;
     currentTitle = (currentTitle + 1) % titles.length;
-    typeSpeed = 500; // Pause before next title
+    nextDelay = pauseAfterDeleting;
   }
 
-  setTimeout(typeAnimation, typeSpeed);
+  setTimeout(typeAnimation, nextDelay);
 }
 
-// Start typing animation after page load
-setTimeout(typeAnimation, 2000);
+// Initialize after DOM content loads
+document.addEventListener("DOMContentLoaded", () => {
+  subtitle.style.minHeight = "1.5em"; // Prevent layout shift
+  typeAnimation();
+});
+
 
 // Add parallax effect to hero section
 // window.addEventListener("scroll", () => {
